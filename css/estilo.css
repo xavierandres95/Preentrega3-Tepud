@@ -1,0 +1,278 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  background: #b43831;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 100vw;
+  height: 100%;
+}
+
+header {
+  background: linear-gradient(rgb(7, 41, 120), 40%, pink);
+  width: 100vw;
+  display: flexbox;
+}
+header .menu {
+  max-width: 100%;
+  position: relative;
+  margin-left: 10px;
+}
+
+@media (max-width: 827px) {
+  .menu {
+    height: 100px;
+  }
+}
+.logo {
+  width: 75px;
+  height: 75px;
+  box-sizing: border-box;
+  border: 5px rgb(224, 221, 221) solid;
+  border-radius: 20%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 10px 5px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-3px);
+  }
+  100% {
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+nav {
+  position: absolute;
+  margin-left: 50px;
+  top: 10px;
+  right: 25%;
+  left: 25%;
+}
+nav li {
+  position: relative;
+  list-style: none;
+  margin-left: 50px;
+  padding: 15px 0;
+  float: left;
+}
+nav a {
+  font-size: larger;
+  text-decoration: none;
+  color: #444;
+  font-weight: 800;
+}
+nav a::before {
+  display: block;
+  content: "";
+  width: 0%;
+  background: #444;
+  height: 5px;
+  top: 0;
+  position: absolute;
+  transition: width 0.1s;
+}
+nav a:hover::before {
+  width: 100%;
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #00b7d4);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #505488);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #2f3f80);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #161569);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #5a4894);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #a950a1);
+}
+
+.contenido {
+  background-image: -webkit-linear-gradient(150deg, #ff7cae);
+}
+
+.contenido {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /*gradiente animado*/
+  background-image: -webkit-linear-gradient(150deg, #00b7d4, #505488, #2f3f80, #161569, #5a4894, #a950a1, #ff7cae);
+  background-size: 500%;
+  animation: fondo 7s infinite;
+}
+
+.contenido:-webkit-full-screen {
+  height: 100%;
+}
+
+.contenido:fullscreen {
+  height: 100%;
+}
+
+@keyframes fondo {
+  0% {
+    background-position: 0%, 50%;
+  }
+  50% {
+    background-position: 100%, 50%;
+  }
+  100% {
+    background-position: 0%, 50%;
+  }
+}
+@media (max-width: 1530px) {
+  .contenido {
+    height: auto;
+  }
+}
+.carta {
+  position: relative;
+  width: 300px;
+  height: 320px;
+  margin: 20px;
+}
+.carta .cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.75s;
+}
+.carta .delantera {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #000;
+}
+.carta .delantera img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.carta .trasera {
+  transform: perspective(600px) rotateY(180deg); /*punto final*/
+  background: rgb(226, 176, 227);
+  padding: 15px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+.carta .trasera .link {
+  border-top: solid 3px #444;
+  height: 50px;
+  line-height: 50px;
+}
+.carta .trasera .link a {
+  color: #444;
+}
+.carta .trasera h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+.carta .trasera p {
+  letter-spacing: 1px;
+}
+
+.carta:hover .delantera {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.carta:hover .trasera {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+.loader {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  border: 16px solid #eee;
+  border-radius: 100vw;
+  border-top: 16px solid fuchsia;
+  animation: spin 1s linear infinite, mostrar 5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  visibility: hidden;
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+    background-color: #161569;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes mostrar {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+#loading {
+  background-color: #2f3f80;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  font-size: 30px;
+  visibility: hidden;
+  animation: mostrar 5s;
+}/*# sourceMappingURL=estilo.css.map */

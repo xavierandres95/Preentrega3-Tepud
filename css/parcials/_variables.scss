@@ -1,0 +1,8 @@
+$color-fondo : #b43831;
+$gradiente-header : linear-gradient(rgb(7, 41, 120),40%, pink);
+$gradiente-animado : -webkit-linear-gradient(150deg,#00b7d4,#505488,#2f3f80,#161569,#5a4894,#a950a1,#ff7cae);
+
+
+@each $color in #00b7d4,#505488,#2f3f80,#161569,#5a4894,#a950a1,#ff7cae {
+    
+}

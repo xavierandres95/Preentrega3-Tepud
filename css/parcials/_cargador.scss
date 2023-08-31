@@ -1,0 +1,57 @@
+.loader {
+    width: 500px;
+    height: 500px;
+    position:absolute;
+    border: 16px solid #eee;
+    border-radius: 100vw;
+    border-top: 16px solid fuchsia;
+    animation: spin 1s linear infinite, mostrar 5s ;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    visibility: hidden;
+    z-index: 2;  
+    }
+    
+    @keyframes spin {
+      0% {
+        rotate: 0deg;
+        background-color: #161569;
+      }
+      
+      100% {
+        rotate: 360deg;
+      }
+      }
+    @keyframes mostrar {
+    
+    0%{ 
+      visibility: visible; 
+    }
+    100% {
+      visibility: visible;
+    }
+    
+    }
+    
+    #loading{
+    background-color: #2f3f80;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    font-size: 30px;
+    visibility: hidden;
+    animation: mostrar 5s;
+    }
